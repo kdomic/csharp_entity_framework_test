@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="48b323547e724640a135e50fa24a734e" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="putni_naloziModel.Osobe" Width="1.5" PointX="5.375" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="putni_naloziModel.Prometne_dozvole" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="putni_naloziModel.Putni_nalozi" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="putni_naloziModel.Putni_racun" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="putni_naloziModel.Tehnicki_pregled" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="putni_naloziModel.Vozacke_dozvole" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="putni_naloziModel.Vozila" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="putni_naloziModel.FK__Putni_nal__Osobe__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="putni_naloziModel.FK__Tehnicki___Prome__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="putni_naloziModel.FK__Putni_nal__Vozil__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="putni_naloziModel.FK__Putni_rac__Putni__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="putni_naloziModel.Osobe_has_Vozacke_dozvole" ManuallyRouted="false" />
+        <AssociationConnector Association="putni_naloziModel.Vozila_has_Prometne_dozvole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

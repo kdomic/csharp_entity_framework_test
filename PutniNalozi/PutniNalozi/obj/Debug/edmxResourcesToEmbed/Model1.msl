@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="putni_naloziModelStoreContainer" CdmEntityContainer="putni_naloziEntities">
+    <EntitySetMapping Name="Osobe">
+      <EntityTypeMapping TypeName="putni_naloziModel.Osobe">
+        <MappingFragment StoreEntitySet="Osobe">
+          <ScalarProperty Name="idOsobe" ColumnName="idOsobe" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="oib" ColumnName="oib" />
+          <ScalarProperty Name="rodjenje_datum" ColumnName="rodjenje_datum" />
+          <ScalarProperty Name="rodjenje_mjesto" ColumnName="rodjenje_mjesto" />
+          <ScalarProperty Name="prebivaliste_adresa" ColumnName="prebivaliste_adresa" />
+          <ScalarProperty Name="prebivaliste_mjesto" ColumnName="prebivaliste_mjesto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prometne_dozvole">
+      <EntityTypeMapping TypeName="putni_naloziModel.Prometne_dozvole">
+        <MappingFragment StoreEntitySet="Prometne_dozvole">
+          <ScalarProperty Name="idPrometne" ColumnName="idPrometne" />
+          <ScalarProperty Name="broj_dozvole" ColumnName="broj_dozvole" />
+          <ScalarProperty Name="registracija" ColumnName="registracija" />
+          <ScalarProperty Name="datum_registracije" ColumnName="datum_registracije" />
+          <ScalarProperty Name="dozvolu_izdao" ColumnName="dozvolu_izdao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Putni_nalozi">
+      <EntityTypeMapping TypeName="putni_naloziModel.Putni_nalozi">
+        <MappingFragment StoreEntitySet="Putni_nalozi">
+          <ScalarProperty Name="idPutni_nalozi" ColumnName="idPutni_nalozi" />
+          <ScalarProperty Name="Vozila_idVozila" ColumnName="Vozila_idVozila" />
+          <ScalarProperty Name="Osobe_idOsobe" ColumnName="Osobe_idOsobe" />
+          <ScalarProperty Name="datum_start" ColumnName="datum_start" />
+          <ScalarProperty Name="datum_end" ColumnName="datum_end" />
+          <ScalarProperty Name="adresa_puta" ColumnName="adresa_puta" />
+          <ScalarProperty Name="mjesto_puta" ColumnName="mjesto_puta" />
+          <ScalarProperty Name="radno_mjesto" ColumnName="radno_mjesto" />
+          <ScalarProperty Name="zadaca" ColumnName="zadaca" />
+          <ScalarProperty Name="idVozila" ColumnName="idVozila" />
+          <ScalarProperty Name="trosak_puta" ColumnName="trosak_puta" />
+          <ScalarProperty Name="predujam" ColumnName="predujam" />
+          <ScalarProperty Name="datum_kreiranja" ColumnName="datum_kreiranja" />
+          <ScalarProperty Name="idKreatora" ColumnName="idKreatora" />
+          <ScalarProperty Name="napomena" ColumnName="napomena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Putni_racun">
+      <EntityTypeMapping TypeName="putni_naloziModel.Putni_racun">
+        <MappingFragment StoreEntitySet="Putni_racun">
+          <ScalarProperty Name="idPutni_racun" ColumnName="idPutni_racun" />
+          <ScalarProperty Name="Putni_nalozi_idPutni_nalozi" ColumnName="Putni_nalozi_idPutni_nalozi" />
+          <ScalarProperty Name="vrijeme_dolaska" ColumnName="vrijeme_dolaska" />
+          <ScalarProperty Name="vrijeme_dolaska_2" ColumnName="vrijeme_dolaska_2" />
+          <ScalarProperty Name="trosak_puta" ColumnName="trosak_puta" />
+          <ScalarProperty Name="racuni_gorivo" ColumnName="racuni_gorivo" />
+          <ScalarProperty Name="racuni_ostalo" ColumnName="racuni_ostalo" />
+          <ScalarProperty Name="prijedjeno_kilometara" ColumnName="prijedjeno_kilometara" />
+          <ScalarProperty Name="potroseno_goriva" ColumnName="potroseno_goriva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tehnicki_pregled">
+      <EntityTypeMapping TypeName="putni_naloziModel.Tehnicki_pregled">
+        <MappingFragment StoreEntitySet="Tehnicki_pregled">
+          <ScalarProperty Name="idTehnicki_pregled" ColumnName="idTehnicki_pregled" />
+          <ScalarProperty Name="Prometne_dozvole_idPrometne" ColumnName="Prometne_dozvole_idPrometne" />
+          <ScalarProperty Name="vrijedi_od" ColumnName="vrijedi_od" />
+          <ScalarProperty Name="vrijedi_do" ColumnName="vrijedi_do" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vozacke_dozvole">
+      <EntityTypeMapping TypeName="putni_naloziModel.Vozacke_dozvole">
+        <MappingFragment StoreEntitySet="Vozacke_dozvole">
+          <ScalarProperty Name="idVozacke_dozvole" ColumnName="idVozacke_dozvole" />
+          <ScalarProperty Name="broj_vozacke" ColumnName="broj_vozacke" />
+          <ScalarProperty Name="broj_registra" ColumnName="broj_registra" />
+          <ScalarProperty Name="izdao" ColumnName="izdao" />
+          <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
+          <ScalarProperty Name="vriejdi_do" ColumnName="vriejdi_do" />
+          <ScalarProperty Name="A1" ColumnName="A1" />
+          <ScalarProperty Name="A2" ColumnName="A2" />
+          <ScalarProperty Name="A" ColumnName="A" />
+          <ScalarProperty Name="B" ColumnName="B" />
+          <ScalarProperty Name="BE" ColumnName="BE" />
+          <ScalarProperty Name="C1" ColumnName="C1" />
+          <ScalarProperty Name="C1E" ColumnName="C1E" />
+          <ScalarProperty Name="C" ColumnName="C" />
+          <ScalarProperty Name="CE" ColumnName="CE" />
+          <ScalarProperty Name="D" ColumnName="D" />
+          <ScalarProperty Name="DE" ColumnName="DE" />
+          <ScalarProperty Name="F" ColumnName="F" />
+          <ScalarProperty Name="G" ColumnName="G" />
+          <ScalarProperty Name="H" ColumnName="H" />
+          <ScalarProperty Name="M" ColumnName="M" />
+          <ScalarProperty Name="napomena" ColumnName="napomena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vozila">
+      <EntityTypeMapping TypeName="putni_naloziModel.Vozila">
+        <MappingFragment StoreEntitySet="Vozila">
+          <ScalarProperty Name="idVozila" ColumnName="idVozila" />
+          <ScalarProperty Name="ime_vlasnika" ColumnName="ime_vlasnika" />
+          <ScalarProperty Name="adresa_vlasnika" ColumnName="adresa_vlasnika" />
+          <ScalarProperty Name="vrsta_vozila" ColumnName="vrsta_vozila" />
+          <ScalarProperty Name="marka_vozila" ColumnName="marka_vozila" />
+          <ScalarProperty Name="tip_vozila" ColumnName="tip_vozila" />
+          <ScalarProperty Name="model_vozila" ColumnName="model_vozila" />
+          <ScalarProperty Name="boja_vozila" ColumnName="boja_vozila" />
+          <ScalarProperty Name="broj_sasije" ColumnName="broj_sasije" />
+          <ScalarProperty Name="oblik_karoserija" ColumnName="oblik_karoserija" />
+          <ScalarProperty Name="osnovna_namjena" ColumnName="osnovna_namjena" />
+          <ScalarProperty Name="proizvodjac" ColumnName="proizvodjac" />
+          <ScalarProperty Name="drzava_podrjetla" ColumnName="drzava_podrjetla" />
+          <ScalarProperty Name="godina_proizvodnje" ColumnName="godina_proizvodnje" />
+          <ScalarProperty Name="datum_prve_registracije" ColumnName="datum_prve_registracije" />
+          <ScalarProperty Name="mjesta_za_sjedenje" ColumnName="mjesta_za_sjedenje" />
+          <ScalarProperty Name="mjesta_za_stajanje" ColumnName="mjesta_za_stajanje" />
+          <ScalarProperty Name="mjesta_za_lezanje" ColumnName="mjesta_za_lezanje" />
+          <ScalarProperty Name="dopustena_nosivost" ColumnName="dopustena_nosivost" />
+          <ScalarProperty Name="masa_praznog_vozila" ColumnName="masa_praznog_vozila" />
+          <ScalarProperty Name="najvece_dopustena_masa" ColumnName="najvece_dopustena_masa" />
+          <ScalarProperty Name="maksimalna_brzina" ColumnName="maksimalna_brzina" />
+          <ScalarProperty Name="broj_osovina" ColumnName="broj_osovina" />
+          <ScalarProperty Name="broj_pogonskih_osovina" ColumnName="broj_pogonskih_osovina" />
+          <ScalarProperty Name="vrsta_motora" ColumnName="vrsta_motora" />
+          <ScalarProperty Name="snaga_motora" ColumnName="snaga_motora" />
+          <ScalarProperty Name="broj_okretaja" ColumnName="broj_okretaja" />
+          <ScalarProperty Name="radni_obujam" ColumnName="radni_obujam" />
+          <ScalarProperty Name="mjere_duzina" ColumnName="mjere_duzina" />
+          <ScalarProperty Name="mjere_sirina" ColumnName="mjere_sirina" />
+          <ScalarProperty Name="mjere_obujam" ColumnName="mjere_obujam" />
+          <ScalarProperty Name="broj_kotaca" ColumnName="broj_kotaca" />
+          <ScalarProperty Name="gume_prednje" ColumnName="gume_prednje" />
+          <ScalarProperty Name="gume_srednje" ColumnName="gume_srednje" />
+          <ScalarProperty Name="gume_straznje" ColumnName="gume_straznje" />
+          <ScalarProperty Name="vrsta_kocnica" ColumnName="vrsta_kocnica" />
+          <ScalarProperty Name="koka" ColumnName="koka" />
+          <ScalarProperty Name="vitlo" ColumnName="vitlo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Osobe_has_Vozacke_dozvole" TypeName="putni_naloziModel.Osobe_has_Vozacke_dozvole" StoreEntitySet="Osobe_has_Vozacke_dozvole">
+      <EndProperty Name="Osobe">
+        <ScalarProperty Name="idOsobe" ColumnName="Osobe_idOsobe" />
+      </EndProperty>
+      <EndProperty Name="Vozacke_dozvole">
+        <ScalarProperty Name="idVozacke_dozvole" ColumnName="Vozacke_dozvole_idVozacke_dozvole" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Vozila_has_Prometne_dozvole" TypeName="putni_naloziModel.Vozila_has_Prometne_dozvole" StoreEntitySet="Vozila_has_Prometne_dozvole">
+      <EndProperty Name="Prometne_dozvole">
+        <ScalarProperty Name="idPrometne" ColumnName="Prometne_dozvole_idPrometne" />
+      </EndProperty>
+      <EndProperty Name="Vozila">
+        <ScalarProperty Name="idVozila" ColumnName="Vozila_idVozila" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

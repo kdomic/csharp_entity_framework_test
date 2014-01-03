@@ -1,0 +1,13 @@
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\bin\Debug\PutniNalozi.exe.config
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\bin\Debug\PutniNalozi.exe
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\bin\Debug\PutniNalozi.pdb
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\obj\Debug\PutniNalozi.csprojResolveAssemblyReference.cache
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\obj\Debug\PutniNalozi.Properties.Resources.resources
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\obj\Debug\PutniNalozi.csproj.GenerateResource.Cache
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\obj\Debug\PutniNalozi.exe
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\obj\Debug\PutniNalozi.pdb
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\bin\Debug\EntityFramework.dll
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\bin\Debug\EntityFramework.xml
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\obj\Debug\PutniNalozi.Djelatnici_lista.resources
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\obj\Debug\PutniNalozi.Main.resources
+c:\users\krunoslav\documents\visual studio 2012\Projects\PutniNalozi\PutniNalozi\obj\Debug\PutniNalozi.Djelatnici_unos.resources

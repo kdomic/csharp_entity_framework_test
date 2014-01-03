@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="putni_naloziModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="putni_naloziEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Osobe" EntityType="putni_naloziModel.Osobe" />
+    <EntitySet Name="Prometne_dozvole" EntityType="putni_naloziModel.Prometne_dozvole" />
+    <EntitySet Name="Putni_nalozi" EntityType="putni_naloziModel.Putni_nalozi" />
+    <EntitySet Name="Putni_racun" EntityType="putni_naloziModel.Putni_racun" />
+    <EntitySet Name="Tehnicki_pregled" EntityType="putni_naloziModel.Tehnicki_pregled" />
+    <EntitySet Name="Vozacke_dozvole" EntityType="putni_naloziModel.Vozacke_dozvole" />
+    <EntitySet Name="Vozila" EntityType="putni_naloziModel.Vozila" />
+    <AssociationSet Name="FK__Putni_nal__Osobe__76969D2E" Association="putni_naloziModel.FK__Putni_nal__Osobe__76969D2E">
+      <End Role="Osobe" EntitySet="Osobe" />
+      <End Role="Putni_nalozi" EntitySet="Putni_nalozi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tehnicki___Prome__6C190EBB" Association="putni_naloziModel.FK__Tehnicki___Prome__6C190EBB">
+      <End Role="Prometne_dozvole" EntitySet="Prometne_dozvole" />
+      <End Role="Tehnicki_pregled" EntitySet="Tehnicki_pregled" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Putni_nal__Vozil__778AC167" Association="putni_naloziModel.FK__Putni_nal__Vozil__778AC167">
+      <End Role="Vozila" EntitySet="Vozila" />
+      <End Role="Putni_nalozi" EntitySet="Putni_nalozi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Putni_rac__Putni__7A672E12" Association="putni_naloziModel.FK__Putni_rac__Putni__7A672E12">
+      <End Role="Putni_nalozi" EntitySet="Putni_nalozi" />
+      <End Role="Putni_racun" EntitySet="Putni_racun" />
+    </AssociationSet>
+    <AssociationSet Name="Osobe_has_Vozacke_dozvole" Association="putni_naloziModel.Osobe_has_Vozacke_dozvole">
+      <End Role="Osobe" EntitySet="Osobe" />
+      <End Role="Vozacke_dozvole" EntitySet="Vozacke_dozvole" />
+    </AssociationSet>
+    <AssociationSet Name="Vozila_has_Prometne_dozvole" Association="putni_naloziModel.Vozila_has_Prometne_dozvole">
+      <End Role="Prometne_dozvole" EntitySet="Prometne_dozvole" />
+      <End Role="Vozila" EntitySet="Vozila" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Osobe">
+    <Key>
+      <PropertyRef Name="idOsobe" />
+    </Key>
+    <Property Name="idOsobe" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="prezime" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="oib" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
+    <Property Name="rodjenje_datum" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="rodjenje_mjesto" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="prebivaliste_adresa" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="prebivaliste_mjesto" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Putni_nalozi" Relationship="putni_naloziModel.FK__Putni_nal__Osobe__76969D2E" FromRole="Osobe" ToRole="Putni_nalozi" />
+    <NavigationProperty Name="Vozacke_dozvole" Relationship="putni_naloziModel.Osobe_has_Vozacke_dozvole" FromRole="Osobe" ToRole="Vozacke_dozvole" />
+  </EntityType>
+  <EntityType Name="Prometne_dozvole">
+    <Key>
+      <PropertyRef Name="idPrometne" />
+    </Key>
+    <Property Name="idPrometne" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="broj_dozvole" Type="Int32" />
+    <Property Name="registracija" Type="Int32" />
+    <Property Name="datum_registracije" Type="Int32" />
+    <Property Name="dozvolu_izdao" Type="Int32" />
+    <NavigationProperty Name="Tehnicki_pregled" Relationship="putni_naloziModel.FK__Tehnicki___Prome__6C190EBB" FromRole="Prometne_dozvole" ToRole="Tehnicki_pregled" />
+    <NavigationProperty Name="Vozila" Relationship="putni_naloziModel.Vozila_has_Prometne_dozvole" FromRole="Prometne_dozvole" ToRole="Vozila" />
+  </EntityType>
+  <EntityType Name="Putni_nalozi">
+    <Key>
+      <PropertyRef Name="idPutni_nalozi" />
+    </Key>
+    <Property Name="idPutni_nalozi" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Vozila_idVozila" Type="Int32" Nullable="false" />
+    <Property Name="Osobe_idOsobe" Type="Int32" Nullable="false" />
+    <Property Name="datum_start" Type="DateTime" Precision="3" />
+    <Property Name="datum_end" Type="DateTime" Precision="3" />
+    <Property Name="adresa_puta" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="mjesto_puta" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="radno_mjesto" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="zadaca" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="idVozila" Type="Int32" />
+    <Property Name="trosak_puta" Type="Double" />
+    <Property Name="predujam" Type="Double" />
+    <Property Name="datum_kreiranja" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idKreatora" Type="Int32" Nullable="false" />
+    <Property Name="napomena" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Osobe" Relationship="putni_naloziModel.FK__Putni_nal__Osobe__76969D2E" FromRole="Putni_nalozi" ToRole="Osobe" />
+    <NavigationProperty Name="Vozila" Relationship="putni_naloziModel.FK__Putni_nal__Vozil__778AC167" FromRole="Putni_nalozi" ToRole="Vozila" />
+    <NavigationProperty Name="Putni_racun" Relationship="putni_naloziModel.FK__Putni_rac__Putni__7A672E12" FromRole="Putni_nalozi" ToRole="Putni_racun" />
+  </EntityType>
+  <EntityType Name="Putni_racun">
+    <Key>
+      <PropertyRef Name="idPutni_racun" />
+    </Key>
+    <Property Name="idPutni_racun" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Putni_nalozi_idPutni_nalozi" Type="Int32" Nullable="false" />
+    <Property Name="vrijeme_dolaska" Type="DateTime" Precision="3" />
+    <Property Name="vrijeme_dolaska_2" Type="DateTime" Precision="3" />
+    <Property Name="trosak_puta" Type="Double" />
+    <Property Name="racuni_gorivo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="racuni_ostalo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="prijedjeno_kilometara" Type="Int32" />
+    <Property Name="potroseno_goriva" Type="Int32" />
+    <NavigationProperty Name="Putni_nalozi" Relationship="putni_naloziModel.FK__Putni_rac__Putni__7A672E12" FromRole="Putni_racun" ToRole="Putni_nalozi" />
+  </EntityType>
+  <EntityType Name="Tehnicki_pregled">
+    <Key>
+      <PropertyRef Name="idTehnicki_pregled" />
+    </Key>
+    <Property Name="idTehnicki_pregled" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Prometne_dozvole_idPrometne" Type="Int32" Nullable="false" />
+    <Property Name="vrijedi_od" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="vrijedi_do" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Prometne_dozvole" Relationship="putni_naloziModel.FK__Tehnicki___Prome__6C190EBB" FromRole="Tehnicki_pregled" ToRole="Prometne_dozvole" />
+  </EntityType>
+  <EntityType Name="Vozacke_dozvole">
+    <Key>
+      <PropertyRef Name="idVozacke_dozvole" />
+    </Key>
+    <Property Name="idVozacke_dozvole" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="broj_vozacke" Type="Int32" />
+    <Property Name="broj_registra" Type="Int32" />
+    <Property Name="izdao" Type="Int32" />
+    <Property Name="datum_izdavanja" Type="Int32" />
+    <Property Name="vriejdi_do" Type="Int32" />
+    <Property Name="A1" Type="Boolean" />
+    <Property Name="A2" Type="Boolean" />
+    <Property Name="A" Type="Boolean" />
+    <Property Name="B" Type="Boolean" />
+    <Property Name="BE" Type="Boolean" />
+    <Property Name="C1" Type="Boolean" />
+    <Property Name="C1E" Type="Boolean" />
+    <Property Name="C" Type="Boolean" />
+    <Property Name="CE" Type="Boolean" />
+    <Property Name="D" Type="Boolean" />
+    <Property Name="DE" Type="Boolean" />
+    <Property Name="F" Type="Boolean" />
+    <Property Name="G" Type="Boolean" />
+    <Property Name="H" Type="Boolean" />
+    <Property Name="M" Type="Boolean" />
+    <Property Name="napomena" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Osobe" Relationship="putni_naloziModel.Osobe_has_Vozacke_dozvole" FromRole="Vozacke_dozvole" ToRole="Osobe" />
+  </EntityType>
+  <EntityType Name="Vozila">
+    <Key>
+      <PropertyRef Name="idVozila" />
+    </Key>
+    <Property Name="idVozila" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ime_vlasnika" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="adresa_vlasnika" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="vrsta_vozila" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="marka_vozila" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="tip_vozila" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="model_vozila" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="boja_vozila" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="broj_sasije" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="oblik_karoserija" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="osnovna_namjena" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="proizvodjac" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="drzava_podrjetla" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="godina_proizvodnje" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="datum_prve_registracije" Type="DateTime" Precision="0" />
+    <Property Name="mjesta_za_sjedenje" Type="Int32" />
+    <Property Name="mjesta_za_stajanje" Type="Int32" />
+    <Property Name="mjesta_za_lezanje" Type="Int32" />
+    <Property Name="dopustena_nosivost" Type="Int32" />
+    <Property Name="masa_praznog_vozila" Type="Int32" />
+    <Property Name="najvece_dopustena_masa" Type="Int32" />
+    <Property Name="maksimalna_brzina" Type="Int32" />
+    <Property Name="broj_osovina" Type="Int32" />
+    <Property Name="broj_pogonskih_osovina" Type="Int32" />
+    <Property Name="vrsta_motora" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="snaga_motora" Type="Int32" />
+    <Property Name="broj_okretaja" Type="Int32" />
+    <Property Name="radni_obujam" Type="Int32" />
+    <Property Name="mjere_duzina" Type="Int32" />
+    <Property Name="mjere_sirina" Type="Int32" />
+    <Property Name="mjere_obujam" Type="Int32" />
+    <Property Name="broj_kotaca" Type="Int32" />
+    <Property Name="gume_prednje" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="gume_srednje" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="gume_straznje" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="vrsta_kocnica" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="koka" Type="Boolean" />
+    <Property Name="vitlo" Type="Boolean" />
+    <NavigationProperty Name="Putni_nalozi" Relationship="putni_naloziModel.FK__Putni_nal__Vozil__778AC167" FromRole="Vozila" ToRole="Putni_nalozi" />
+    <NavigationProperty Name="Prometne_dozvole" Relationship="putni_naloziModel.Vozila_has_Prometne_dozvole" FromRole="Vozila" ToRole="Prometne_dozvole" />
+  </EntityType>
+  <Association Name="FK__Putni_nal__Osobe__76969D2E">
+    <End Role="Osobe" Type="putni_naloziModel.Osobe" Multiplicity="1" />
+    <End Role="Putni_nalozi" Type="putni_naloziModel.Putni_nalozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Osobe">
+        <PropertyRef Name="idOsobe" />
+      </Principal>
+      <Dependent Role="Putni_nalozi">
+        <PropertyRef Name="Osobe_idOsobe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tehnicki___Prome__6C190EBB">
+    <End Role="Prometne_dozvole" Type="putni_naloziModel.Prometne_dozvole" Multiplicity="1" />
+    <End Role="Tehnicki_pregled" Type="putni_naloziModel.Tehnicki_pregled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prometne_dozvole">
+        <PropertyRef Name="idPrometne" />
+      </Principal>
+      <Dependent Role="Tehnicki_pregled">
+        <PropertyRef Name="Prometne_dozvole_idPrometne" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Putni_nal__Vozil__778AC167">
+    <End Role="Vozila" Type="putni_naloziModel.Vozila" Multiplicity="1" />
+    <End Role="Putni_nalozi" Type="putni_naloziModel.Putni_nalozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vozila">
+        <PropertyRef Name="idVozila" />
+      </Principal>
+      <Dependent Role="Putni_nalozi">
+        <PropertyRef Name="Vozila_idVozila" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Putni_rac__Putni__7A672E12">
+    <End Role="Putni_nalozi" Type="putni_naloziModel.Putni_nalozi" Multiplicity="1" />
+    <End Role="Putni_racun" Type="putni_naloziModel.Putni_racun" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Putni_nalozi">
+        <PropertyRef Name="idPutni_nalozi" />
+      </Principal>
+      <Dependent Role="Putni_racun">
+        <PropertyRef Name="Putni_nalozi_idPutni_nalozi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Osobe_has_Vozacke_dozvole">
+    <End Role="Osobe" Type="putni_naloziModel.Osobe" Multiplicity="*" />
+    <End Role="Vozacke_dozvole" Type="putni_naloziModel.Vozacke_dozvole" Multiplicity="*" />
+  </Association>
+  <Association Name="Vozila_has_Prometne_dozvole">
+    <End Role="Prometne_dozvole" Type="putni_naloziModel.Prometne_dozvole" Multiplicity="*" />
+    <End Role="Vozila" Type="putni_naloziModel.Vozila" Multiplicity="*" />
+  </Association>
+</Schema>
